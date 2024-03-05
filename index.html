@@ -1,5 +1,121 @@
-<html>
-<body>
-<p1>dfkdjkfd</p1>
-</body>
+<!DOCTYPE html>
+<html lang="en" ondragstart="return false;" ondrop="return false;">
+<meta charset="UTF-8">
+<title>Chess Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+     img {
+  max-width: 100%;
+  height: auto;
+  border: blue;
+} 
+</style>
+
+</head>
+  <script src="./constant.js"></script>
+  <script src="./script.js"></script>
+<body >
+<center>
+  <table>
+    <div id="chess">
+<tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a1" value="rook-b" onclick="func(this)" ><img draggable="false" id="a1img" src="./coins/rook-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a2" value="knight-b" onclick="func(this)" ><img id="a2img" src="./coins/knight-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a3" value="commonr-b" onclick="func(this)" ><img id="a3img" src="./coins/commonr-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a4" value="queen-b" onclick="func(this)" ><img id="a4img" src="./coins/queen-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="king-b" id="a5" value="king-b" onclick="func(this)" ><img id="a5img" src="./coins/king-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a6" value="commonr-b" onclick="func(this)" ><img id="a6img" src="./coins/commonr-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a7" value="knight-b" onclick="func(this)" ><img id="a7img" src="./coins/knight-b.svg" alt="board"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="a8" value="rook-b" onclick="func(this)" ><img id="a8img" src="./coins/rook-b.svg" alt="board"></img></Button></td>
+</tr>
+<tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b1" value="pawn-b" onclick="func(this)" ><img  id="b1img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b2" value="pawn-b" onclick="func(this)" ><img  id="b2img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b3" value="pawn-b" onclick="func(this)" ><img  id="b3img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b4" value="pawn-b" onclick="func(this)" ><img  id="b4img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b5" value="pawn-b" onclick="func(this)" ><img  id="b5img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b6" value="pawn-b" onclick="func(this)" ><img  id="b6img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b7" value="pawn-b" onclick="func(this)" ><img  id="b7img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="b8" value="pawn-b" onclick="func(this)" ><img  id="b8img" name="blank" src="./coins/pawn-b.svg" alt="pawn"></img></Button></td>
+ </tr>
+ 
+<tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c1" value="blank" onclick="func(this)" ><img id="c1img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c2" value="blank" onclick="func(this)" ><img id="c2img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c3" value="blank" onclick="func(this)" ><img id="c3img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c4" value="blank" onclick="func(this)" ><img id="c4img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c5" value="blank" onclick="func(this)" ><img id="c5img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c6" value="blank" onclick="func(this)" ><img id="c6img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c7" value="blank" onclick="func(this)" ><img id="c7img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="c8" value="blank" onclick="func(this)" ><img id="c8img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+ </tr>
+
+<tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d1" value="blank" onclick="func(this)" ><img id="d1img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d2" value="blank" onclick="func(this)" ><img id="d2img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d3" value="blank" onclick="func(this)" ><img id="d3img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d4" value="blank" onclick="func(this)" ><img id="d4img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d5" value="blank" onclick="func(this)" ><img id="d5img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d6" value="blank" onclick="func(this)" ><img id="d6img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d7" value="blank" onclick="func(this)" ><img id="d7img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="d8" value="blank" onclick="func(this)" ><img id="d8img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+
+ </tr>
+ <tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e1" value="blank" onclick="func(this)" ><img id="e1img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e2" value="blank" onclick="func(this)" ><img id="e2img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e3" value="blank" onclick="func(this)" ><img id="e3img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e4" value="blank" onclick="func(this)" ><img id="e4img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e5" value="blank" onclick="func(this)" ><img id="e5img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e6" value="blank" onclick="func(this)" ><img id="e6img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e7" value="blank" onclick="func(this)" ><img id="e7img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="e8" value="blank" onclick="func(this)" ><img id="e8img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+ </tr>
+ <tr>
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f1" value="blank" onclick="func(this)" ><img id="f1img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f2" value="blank" onclick="func(this)" ><img id="f2img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f3" value="blank" onclick="func(this)" ><img id="f3img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f4" value="blank" onclick="func(this)" ><img id="f4img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f5" value="blank" onclick="func(this)" ><img id="f5img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f6" value="blank" onclick="func(this)" ><img id="f6img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f7" value="blank" onclick="func(this)" ><img id="f7img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+    <td contenteditable='true'> <Button class="bb" name="notmarked" id="f8" value="blank" onclick="func(this)" ><img id="f8img" name="blank" src="./coins/blank.png" alt="blank"></img></Button></td>   
+ </tr>
+ <tr>
+	 <td contenteditable='true'> <Button class="bb" name="notmarked" id="g1" value="pawn-w" onclick="func(this)" ><img  id="g1img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g2" value="pawn-w" onclick="func(this)" ><img  id="g2img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g3" value="pawn-w" onclick="func(this)" ><img  id="g3img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g4" value="pawn-w" onclick="func(this)" ><img  id="g4img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g5" value="pawn-w" onclick="func(this)" ><img  id="g5img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g6" value="pawn-w" onclick="func(this)" ><img  id="g6img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g7" value="pawn-w" onclick="func(this)" ><img  id="g7img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="g8" value="pawn-w" onclick="func(this)" ><img  id="g8img" name="pawn-w"  src="./coins/pawn-w.svg" alt="board"></img></Button></td>
+ </tr>
+ <tr>
+	 <td contenteditable='true'> <Button class="bb" name="notmarked" id="h1" value="rook-w" onclick="func(this)" ><img id="h1img" name="blank" src="./coins/rook-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h2" value="knight-w" onclick="func(this)" ><img id="h2img" name="blank" src="./coins/knight-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h3" value="commonr-w" onclick="func(this)" ><img id="h3img" name="blank" src="./coins/commonr-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h4" value="queen-w" onclick="func(this)" ><img id="h4img" name="blank" src="./coins/queen-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h5" value="king-w" onclick="func(this)" ><img id="h5img" name="blank" src="./coins/king-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h6" value="commonr-w" onclick="func(this)" ><img id="h6img" name="blank" src="./coins/commonr-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h7" value="knight-w" onclick="func(this)" ><img id="h7img" name="blank" src="./coins/knight-w.svg" alt="board"></img></Button></td>
+     <td contenteditable='true'> <Button class="bb" name="notmarked" id="h8" value="rook-w" onclick="func(this)" ><img id="h8img" name="blank" src="./coins/rook-w.svg" alt="board"></img></Button></td>
+ </tr>
+</div>
+</table></center>
+
+</body> 
+
+<!-- <script>
+    function func(btn)
+{
+    alert(btn.value);
+    alert(btn.name);
+    alert(btn.id);
+}
+</script> -->
 </html>

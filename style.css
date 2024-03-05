@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin:0;
+}
+table{
+    width: auto;
+    border-collapse: collapse;
+}
+tr,td{
+    border: 1px solid black;
+}
+/* tr:nth-child(even) {
+    background-color: salmon;
+  } */
+img{
+    width: 60px;
+    height: 60px;
+}
+  .Buttons
+  {
+    background-color: #04AA6D; /* Green */
+    border: black;
+    color: rgb(184, 193, 5);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+  .Buttons:hover {
+    background-color: #cd1b1b; /* red */
+    color: white;
+  }
+  .bb{
+    background-color: rgb(245, 164, 164);
+      /* border-collapse: collapse; */
+    }
+  .glow{
+      background-color: #00ff40;
+      
+        /* border-collapse: collapse; */
+
+    }
