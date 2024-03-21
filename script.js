@@ -5,6 +5,7 @@ let crossedWhitePieces = [];
 let corssedBlackPieces = [];
 let isCheckArr=[];
 let verticalLimit = ["a", "b", "c", "d", "e", "f", "g", "h"];
+let countMove=1;
 // const box = document.getElementById('chess');
 // box.addEventListener('dragstart', event => {
 //   event.preventDefault();
@@ -13,10 +14,6 @@ let verticalLimit = ["a", "b", "c", "d", "e", "f", "g", "h"];
 //   event.preventDefault();
 // });
 function func(btn) {
-    //bool to check is clicked in highligted area...
-    const collection = document.getElementsByTagName("Button");
-    const isCheckMateArr=getKingPositionFromBoard(collection);
-    
     
     console.log("----->highlight arr" + resetHighLight);
     let isClickedinHighLight = isClickedInHiglight(lastClickedButton, resetHighLight, btn);
@@ -35,11 +32,17 @@ function func(btn) {
         resetHighLight = possibleMoves;
         for (let j = 0; j < possibleMoves.length; j++) {
             var id = getIdAndValue(possibleMoves[j]);
-            id.classList.add("glow");
+            if(id.classList.contains('black'))id.classList.remove('black');
+            else id.classList.remove('white');
+            id.classList.add('glow');
         }
         lastClickedButton = getIdAndValue(btn.id);
         console.log("lastClicked button " + lastClickedButton.id);
     }
+    
+    const collection = document.getElementsByTagName("Button");
+    const isCheckMateArr=getKingPositionFromBoard(collection);
+    
     // console.log("last button clicked = "+lastClickedButton.id);
 }
 
@@ -55,6 +58,13 @@ function getKingPositionFromBoard(collection)
             temp+=collection[i].value+","+collection[i].id;
             king.push(temp);
         }
+    }
+    if(king.length==1)
+    {
+        const temp=king[0].split(',');
+        if(temp[0].startsWith('king-b'))alert('Black Player wins the Match!!!');
+        else alert('White Player wins the Match!!!');
+        restart();
     }
     console.log('king arr='+king);
 }
@@ -76,6 +86,7 @@ function isClickedInHiglight(source, arr, destination) {
         if (arr[i] == destination.id) {
             isCoinMovedOrCrossed = true;
             console.log("can move " + source.id + " to destination = " + destination.id);
+            document.getElementById("p").innerHTML="move "+countMove+++" source - "+source.value+" destination - "+destination.value;
             if (destination.value != "blank") crossPiece(source, destination);
             else move(source, destination);
 
@@ -122,11 +133,21 @@ function crossPiece(sid, did) {
 }
 
 function remoevHighlight(arr) {
-    console.log("removing highlight for " + arr);
-    for (let j = 0; j < arr.length; j++) {
-        var id = getIdAndValue(arr[j]);
-        id.classList.remove("glow");
-        id.classList.add("bb");
+    console.log("removing highlight for array-->" + arr);
+    let start='white';
+    let first='a';
+    while(first.charAt(0)!='i')
+    {
+        for(let id=1;id<=8;id++)
+        {
+            let curr=getIdAndValue(first+id);
+            curr.classList='';
+            curr.classList.add(start);
+            if(id!=8)
+            start=(start=='white')?'black':'white';
+        }
+
+        first = String.fromCharCode(first.charAt(0).charCodeAt(0) + 1);
     }
     resetHighLight = [];
 }
@@ -433,6 +454,14 @@ function isCheck(destination)
     }
     isCheckArr=[];
     return isCheck;
+}
+function restart()
+{
+    console.log("dddd");
+    if(confirm("Do you want to restart the Game?..."))
+    {
+        window.location.reload();
+    }
 }
 function isCheckMate()
 {

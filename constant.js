@@ -20,7 +20,7 @@ const kingValue="king";
 const path=new Map([
     ["pawn-b","./coins/pawn-b.svg"],
     ["pawn-w","./coins/pawn-w.svg"],
-    ["blank","./coins/blank.png"],
+    ["blank","./coins/blank.svg"],
     ["knight-b","./coins/knight-b.svg"],
     ["knight-w","./coins/knight-w.svg"],
     ["bishop-w","./coins/bishop-w.svg"],

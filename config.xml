@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<widget
+    android-versionCode='1'
+    id='pragadeeshsindhu.chess'
+    version='1.0.0'
+    xmlns='https://www.w3.org/ns/widgets'>
+
+    <name>Chess</name>
+    <description>Praga's version 1.0.0</description>
+    <author>Pragadeesh</author>
+    
+</widget>
