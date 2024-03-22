@@ -5,7 +5,8 @@ let crossedWhitePieces = [];
 let corssedBlackPieces = [];
 let isCheckArr=[];
 let verticalLimit = ["a", "b", "c", "d", "e", "f", "g", "h"];
-let countMove=1;
+let whiteCountMove=1;
+let blackCountMove=1;
 // const box = document.getElementById('chess');
 // box.addEventListener('dragstart', event => {
 //   event.preventDefault();
@@ -38,6 +39,15 @@ function func(btn) {
         }
         lastClickedButton = getIdAndValue(btn.id);
         console.log("lastClicked button " + lastClickedButton.id);
+
+        // document.getElementById("p").innerHTML="move "+countMove+++" source - "+source.value+" destination - "+destination.value;
+        document.getElementById("wp").innerHTML=bOrw;
+        if(bOrw=='white')
+        document.getElementById("wnoOfMoves").innerHTML=whiteCountMove++;
+        else if(bOrw=='black')
+        document.getElementById("bnoOfMoves").innerHTML=blackCountMove++;
+        else {}
+
     }
     
     const collection = document.getElementsByTagName("Button");
@@ -86,7 +96,9 @@ function isClickedInHiglight(source, arr, destination) {
         if (arr[i] == destination.id) {
             isCoinMovedOrCrossed = true;
             console.log("can move " + source.id + " to destination = " + destination.id);
-            document.getElementById("p").innerHTML="move "+countMove+++" source - "+source.value+" destination - "+destination.value;
+            
+           document.getElementById("frm").innerHTML=source.id;
+           document.getElementById("to").innerHTML=destination.id;
             if (destination.value != "blank") crossPiece(source, destination);
             else move(source, destination);
 

@@ -106,20 +106,30 @@
      <td contenteditable='true'> <Button class="black" name="notmarked" id="h7" value="knight-w" onclick="func(this)" ><img id="h7img" name="blank" src="./coins/knight-w.svg" alt="board"></img></Button></td>
      <td contenteditable='true'> <Button class="white" name="notmarked" id="h8" value="rook-w" onclick="func(this)" ><img id="h8img" name="blank" src="./coins/rook-w.svg" alt="board"></img></Button></td>
  </tr>
-</div>
-<!-- </table></center>
+ </div>
+</table>
+</center>
 <br>
-<tr><button id="restart" class="button" onclick="restart()">Restart</button>
-    <br>
-    <tr>
-        <tr><th>Piece</th>
+<center><button id="restart" class="button" onclick="restart()">Restart</button></center>
+<center>
+    <table style="width:70%" border="collapse" >
+    <tr >
+        <th>Piece</th>
         <th>From</th>
         <th>To</th>
-        <th>TimeTaken</th></tr>
-        <tr><td></td></tr>
+        <th>TotalMovesWhite</th>
+        <th>TotalMovesBlack</th>
+    </tr>
+    <tr>
+            <td><p id="wp"></p></td>
+            <td><p id="frm"></p></td>
+            <td><p id="to"></p></td>
+            <td><p id="wnoOfMoves"></p></td>
+            <td><p id="bnoOfMoves"></p></td>
+    </tr>
     </table>
-    <p id="p"></p>
-</center> -->
+    
+</center>
 
 </body> 
 
